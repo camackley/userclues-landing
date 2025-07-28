@@ -1,0 +1,495 @@
+/*
+  Global Stylesheet for the User Clues landing page.  This file defines the
+  colour palette, typography, responsive layout and component styling.  The
+  design is inspired by modern SaaS landing pages and optimised for high
+  conversion.  Colours are defined using CSS variables for easy maintenance.
+*/
+
+:root {
+  /* Brand colours */
+  --surface-color: #0F172A;       /* primary background: deep navy */
+  --surface-color-2: #1B2B4B;     /* secondary background: slightly lighter navy */
+  --text-primary: #FFFFFF;        /* pure white for high contrast */
+  --text-secondary: #E8EDF7;      /* soft white for secondary text */
+  --primary: #2D4F8C;             /* steel blue for primary actions */
+  --accent: #6C4BC9;              /* purple accent for AI highlights */
+  --interactive: #3BAFDA;         /* cyan for hover states and links */
+  --success: #2E8B57;             /* green for success messages */
+  --warning: #E1B12C;             /* yellow for warnings */
+  --error: #D64550;               /* red for errors */
+  --radius: 0.75rem;              /* default border radius */
+}
+
+/* Reset some basic elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--surface-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--surface-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+.logo .highlight {
+  color: var(--accent);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: var(--interactive);
+}
+.nav-links .btn-primary.nav-cta {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.nav-links .btn-primary.nav-cta:hover {
+  background: var(--interactive);
+}
+/* Hamburger Menu */
+.nav-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--surface-color-2);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .nav-toggle:checked + .hamburger + .nav-links {
+    max-height: 320px;
+  }
+  .nav-links li a, .nav-links .btn-primary.nav-cta {
+    width: 100%;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding-top: 6.5rem; /* account for the fixed nav */
+  padding-bottom: 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(27, 43, 75, 0.95) 100%);
+  z-index: -1;
+}
+.hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.input-email {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--surface-color-2);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+.input-email:focus {
+  outline: none;
+  border-color: var(--interactive);
+  box-shadow: 0 0 0 3px rgba(59, 175, 218, 0.3);
+}
+.input-email::placeholder {
+  color: var(--text-secondary);
+}
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: var(--interactive);
+}
+.form-message {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Section Generic Styles */
+.section {
+  padding: 4rem 1.5rem;
+  /* Ensure anchored section headings aren't hidden behind the fixed navbar */
+  scroll-margin-top: 6rem;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.section-desc {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.feature-card {
+  background: var(--surface-color-2);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.feature-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* How It Works Section */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.step-card {
+  background: var(--surface-color-2);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+.step-number {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.step-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.step-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Experiment Section */
+.experiment-section {
+  background: linear-gradient(180deg, var(--surface-color-2) 0%, var(--surface-color) 100%);
+}
+.experiment-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.metric {
+  background: var(--surface-color-2);
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s;
+}
+.metric:hover {
+  transform: translateY(-4px);
+}
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.metric-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.metric-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.experiment-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* FAQ Section */
+.faq-item {
+  background: var(--surface-color-2);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-item p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(180deg, var(--surface-color) 0%, var(--surface-color-2) 100%);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+.bottom-signup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--surface-color-2);
+  padding: 2rem 1.5rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+.footer-links a {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: var(--interactive);
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 1000;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--interactive);
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

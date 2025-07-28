@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    This HTML file defines a modern, responsive landing page for the "User Clues" product.
+    It uses semantic markup and includes the necessary meta tags for technical SEO.  Styles are
+    defined in an external CSS file and behaviour is added via a small JavaScript module.
+
+    Colour palette:
+      Surface (primary background):  #0F172A / #1B2B4B
+      Primary (buttons/highlights):  #2D4F8C
+      Accent (secondary/AI):        #6C4BC9
+      Interactive (links/hover):    #3BAFDA
+      Text (primary):               #FFFFFF
+      Text (secondary):             #E8EDF7
+      Status: Success #2E8B57, Warning #E1B12C, Error #D64550
+  -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Clues | Validate Your UX with AI Insights</title>
+  <meta
+    name="description"
+    content="Join the waitlist to get early access to User Clues, the AI‑powered UX Copilot that helps you validate product demand, run lean experiments and unlock actionable user insights."
+  />
+  <meta name="keywords" content="UX, user research, AI, SaaS, product validation, waitlist" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="User Clues | Validate Your UX with AI Insights" />
+  <meta
+    property="og:description"
+    content="Unlock user insights and validate your product idea with AI‑driven experiments. Join the waitlist for early access to our UX Copilot platform."
+  />
+  <meta property="og:image" content="assets/hero-bg.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <!-- Favicon (optional). Provide a coloured square or your own logo in assets if available. -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%232D4F8C'/><path d='M32 18l11.09 21.6H20.91z' fill='%23FFFFFF'/></svg>" />
+  <!-- Preconnect to Google fonts for performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="top">
+    <div class="nav-container">
+      <a href="#top" class="logo">User<span class="highlight">Clues</span></a>
+      <!-- Hamburger for mobile -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu toggle" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#experiment">Experiment</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cta" class="btn-primary nav-cta">Join Waitlist</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="assets/hero-bg.png" alt="Abstract gradient background" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Unlock User Insights with AI‑Powered Clarity</h1>
+      <p class="hero-subtitle">
+        Validate your product idea and discover what truly matters to your users. Join our 4‑week
+        experiment and turn assumptions into evidence with <strong>User Clues</strong>, the ultimate
+        UX Copilot.
+      </p>
+      <!-- Signup form -->
+      <form id="signup-form" class="signup-form" novalidate>
+        <label for="email" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input-email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit" class="btn-primary btn-submit">Join Waitlist</button>
+      </form>
+      <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="section features-section">
+    <div class="section-inner">
+      <h2 class="section-title">Why Choose User Clues?</h2>
+      <p class="section-desc">
+        We provide AI‑driven insights that empower product teams to make evidence‑based decisions.
+        Our toolkit is built for speed, clarity and conversion.
+      </p>
+      <div class="features-grid">
+        <!-- Feature 1: Target Audience -->
+        <div class="feature-card">
+          <img src="assets/icons/target.png" alt="Targeted audience icon" class="feature-icon" />
+          <h3 class="feature-title">Target the Right Audience</h3>
+          <p class="feature-text">
+            Attract qualified visitors by focusing on the people who are ready to listen. Set up a
+            clear segment and capture their interest with a tailored message.
+          </p>
+        </div>
+        <!-- Feature 2: AI Insights -->
+        <div class="feature-card">
+          <img src="assets/icons/ai.png" alt="AI insights icon" class="feature-icon" />
+          <h3 class="feature-title">AI‑Powered Insights</h3>
+          <p class="feature-text">
+            Leverage artificial intelligence to summarise behaviour, analyse feedback and surface
+            patterns you might otherwise miss. Let your Copilot do the heavy lifting.
+          </p>
+        </div>
+        <!-- Feature 3: Lean Experiments -->
+        <div class="feature-card">
+          <img src="assets/icons/experiment.png" alt="Lean experiments icon" class="feature-icon" />
+          <h3 class="feature-title">Run Lean Experiments</h3>
+          <p class="feature-text">
+            Launch hypotheses quickly with minimal overhead. Iterate based on real data and learn
+            which direction delivers the most value.
+          </p>
+        </div>
+        <!-- Feature 4: Clear Metrics -->
+        <div class="feature-card">
+          <img src="assets/icons/metrics.png" alt="Metrics icon" class="feature-icon" />
+          <h3 class="feature-title">Measure What Matters</h3>
+          <p class="feature-text">
+            Track your conversions, monitor engagement and understand your users’ intent through
+            intuitive dashboards. Data‑driven decisions start with the right numbers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how" class="section how-section">
+    <div class="section-inner">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">
+        Getting started with User Clues is simple. Our 3‑step process helps you validate your ideas
+        without building a full product.
+      </p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Join the Waitlist</h3>
+          <p class="step-text">
+            Sign up with your email and define your target audience. We'll notify you once your
+            experiment is live.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Launch Your Experiment</h3>
+          <p class="step-text">
+            Use our platform to create personalised landing pages, run A/B tests and drive traffic
+            from email campaigns or ads.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Analyse and Iterate</h3>
+          <p class="step-text">
+            Monitor your KPIs in real time, learn from user behaviour and iterate quickly to
+            fine‑tune your value proposition.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiment Section (OKRs/KPIs) -->
+  <section id="experiment" class="section experiment-section">
+    <div class="section-inner">
+      <h2 class="section-title">Validate Your Idea in 4 Weeks</h2>
+      <p class="section-desc">
+        Our experiment is designed to help you test demand and measure engagement. Participate in
+        a controlled experiment and benchmark your results.
+      </p>
+      <div class="experiment-metrics">
+        <div class="metric">
+          <div class="metric-value">1 000+</div>
+          <div class="metric-label">Qualified Visitors</div>
+          <p class="metric-desc">
+            Bring a focused audience to your landing page in just four weeks.
+          </p>
+        </div>
+        <div class="metric">
+          <div class="metric-value">≥ 5%</div>
+          <div class="metric-label">Minimum Conversion</div>
+          <p class="metric-desc">
+            Achieve at least a 5 % signup rate to validate initial interest.
+          </p>
+        </div>
+        <div class="metric">
+          <div class="metric-value">10 %</div>
+          <div class="metric-label">Stretch Goal</div>
+          <p class="metric-desc">
+            Exceed a 10 % conversion rate to demonstrate strong product‑market fit.
+          </p>
+        </div>
+      </div>
+      <div class="experiment-cta">
+        <a href="#cta" class="btn-primary">Get Early Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section faq-section">
+    <div class="section-inner">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is User Clues?</summary>
+          <p>
+            User Clues is an AI‑powered platform that helps you validate your product hypotheses,
+            run lean experiments and collect actionable user insights without building a full
+            product. It’s the fastest way to test demand and optimise your UX.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>How does the 4‑week experiment work?</summary>
+          <p>
+            Once you join the waitlist, you'll receive instructions for creating your landing
+            page and driving traffic to it. During the four‑week sprint you'll monitor visitor
+            behaviour and conversion rates using our dashboard. At the end of the experiment
+            you'll know whether your value proposition resonates with your audience.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if I don't reach 5 % conversion?</summary>
+          <p>
+            If your signup rate is below 5 %, it suggests your message or segment needs
+            adjustment. We’ll provide recommendations to refine your value proposition and help
+            you retest until you find a stronger fit.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Will I need to write any code?</summary>
+          <p>
+            No coding is required. We provide a drag‑and‑drop landing page builder and built‑in
+            analytics. You focus on your idea; we handle the technical details.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <section id="cta" class="section cta-section">
+    <div class="section-inner">
+      <h2 class="section-title">Ready to Discover What Your Users Really Need?</h2>
+      <p class="section-desc">
+        Join our waitlist to gain early access to User Clues. Be among the first to validate your
+        idea, optimise your messaging and unlock the power of data‑driven UX.
+      </p>
+      <form id="bottom-form" class="signup-form bottom-signup" novalidate>
+        <label for="email-cta" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="email-cta"
+          name="email"
+          class="input-email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit" class="btn-primary btn-submit">Get Early Access</button>
+      </form>
+      <div id="bottom-message" class="form-message" role="alert" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-text">© <span id="year"></span> User Clues. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Back to top (optional) -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+</body>
+</html>
