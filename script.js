@@ -5,6 +5,18 @@
 */
 
 document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.querySelector('.navbar');
+  const hero = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.offsetHeight;
+    if (window.scrollY > heroBottom - 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
   // Insert current year into footer
   const yearSpan = document.getElementById('year');
   if (yearSpan) {
