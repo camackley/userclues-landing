@@ -2,20 +2,6 @@
 <html lang="en">
 
 <head>
-  <!--
-    This HTML file defines a modern, responsive landing page for the "User Clues" product.
-    It uses semantic markup and includes the necessary meta tags for technical SEO.  Styles are
-    defined in an external CSS file and behaviour is added via a small JavaScript module.
-
-    Colour palette:
-      Surface (primary background):  #0F172A / #1B2B4B
-      Primary (buttons/highlights):  #2D4F8C
-      Accent (secondary/AI):        #6C4BC9
-      Interactive (links/hover):    #3BAFDA
-      Text (primary):               #FFFFFF
-      Text (secondary):             #E8EDF7
-      Status: Success #2E8B57, Warning #E1B12C, Error #D64550
-  -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +17,7 @@
   <meta property="og:title" content="User Clues | Stop Guessing. Start Optimizing UX" />
   <meta property="og:description"
     content="Discover high-impact UX fixes in seconds. Our AI Copilot analyzes user sessions and drop-offs to deliver prioritized, actionable recommendations in chat." />
-  <meta property="og:image" content="/assets/Icons/metrics.png" />
+  <meta property="og:image" content="/assets/icons/metrics.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://snazzy-gecko-8360a6.netlify.app/" />
 
@@ -40,17 +26,18 @@
   <meta name="twitter:title" content="User Clues | Stop Guessing. Start Optimizing UX" />
   <meta name="twitter:description"
     content="Stop wasting time on disjointed dashboards. Let our AI Copilot diagnose friction and suggest fixes — all in a simple chat interface." />
-  <meta name="twitter:image" content="/assets/Icons/metr.png" />
+  <meta name="twitter:image" content="/assets/icons/metrics.png" />
 
-  <!-- Favicon (optional). Provide a coloured square or your own logo in assets if available. -->
+  <!-- Favicon -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%232D4F8C'/><path d='M32 18l11.09 21.6H20.91z' fill='%23FFFFFF'/></svg>" />
-  <!-- Preconnect to Google fonts for performance -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- PostHog Analytics -->
   <script>
     if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
       !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Re Os As Pe Ms Fs capture Ve calculateEventProperties js register register_once register_for_session unregister unregister_for_session qs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty zs Ls createPersonProfile Us Rs Bs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ds debug I Ns getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
@@ -86,7 +73,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero" href="#top">
+  <header class="hero">
     <div class="hero-bg">
       <img src="assets/hero-bg.png" alt="Gradient background" class="hero-img" />
     </div>
@@ -113,18 +100,15 @@
       <ul class="features-grid">
         <li class="feature-card">
           <h3 class="feature-title">Fragmented Insights</h3>
-          <p class="feature-text">Dashboards and heatmaps only show parts of the picture. You spend hours stitching data
-            together.</p>
+          <p class="feature-text">Dashboards and heatmaps only show parts of the picture. You spend hours stitching data together.</p>
         </li>
         <li class="feature-card">
           <h3 class="feature-title">Manual Overload</h3>
-          <p class="feature-text">Reviewing recordings and reports takes days. Critical friction points slip through the
-            cracks.</p>
+          <p class="feature-text">Reviewing recordings and reports takes days. Critical friction points slip through the cracks.</p>
         </li>
         <li class="feature-card">
           <h3 class="feature-title">Generic Recommendations</h3>
-          <p class="feature-text">Standard best practices aren’t tailored to your flow. You need context-aware,
-            actionable guidance.</p>
+          <p class="feature-text">Standard best practices aren’t tailored to your flow. You need context-aware, actionable guidance.</p>
         </li>
         <li class="feature-card">
           <h3 class="feature-title">Slow Iterations</h3>
@@ -134,12 +118,12 @@
     </div>
   </section>
 
+  <!-- Solution Section -->
   <section id="solution" class="section how-section">
     <div class="section-inner">
       <h2 class="section-title">How UserClues Solves It</h2>
       <p class="section-desc">
-        Our AI Copilot delivers a seamless experience: from raw data to clear, prioritized product suggestions — all in
-        chat.
+        Our AI Copilot delivers a seamless experience: from raw data to clear, prioritized product suggestions — all in chat.
       </p>
       <div class="steps-grid">
         <div class="step-card">
@@ -166,33 +150,29 @@
     </div>
   </section>
 
+  <!-- Features Section -->
   <section id="features" class="section features-section">
     <div class="section-inner">
       <h2 class="section-title">Built for High Conversion</h2>
       <p class="section-desc">
-        UserClues integrates deeply with your product, delivering context-aware UX and flow recommendations that drive
-        results.
+        UserClues integrates deeply with your product, delivering context-aware UX and flow recommendations that drive results.
       </p>
       <div class="features-grid">
-        <!-- Conversational UI -->
         <div class="feature-card">
           <img src="assets/icons/ai.png" alt="Chat icon" class="feature-icon" />
           <h3 class="feature-title">Conversational Interface</h3>
           <p class="feature-text">Ask follow-up questions and get clarity on every suggestion without leaving chat.</p>
         </div>
-        <!-- Funnel Analysis -->
         <div class="feature-card">
           <img src="assets/icons/experiment.png" alt="Funnel icon" class="feature-icon" />
           <h3 class="feature-title">Funnel & Flow Analysis</h3>
           <p class="feature-text">Automatically detect drop-offs and friction in your critical funnels.</p>
         </div>
-        <!-- Actionable -->
         <div class="feature-card">
           <img src="assets/icons/metrics.png" alt="Checklist icon" class="feature-icon" />
           <h3 class="feature-title">Actionable Recommendations</h3>
           <p class="feature-text">Get prioritized UI, copy and flow changes you can implement today.</p>
         </div>
-        <!-- Alignment -->
         <div class="feature-card">
           <img src="assets/icons/target.png" alt="Target icon" class="feature-icon" />
           <h3 class="feature-title">Team Alignment</h3>
@@ -202,6 +182,7 @@
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section id="cta" class="section cta-section">
     <div class="section-inner">
       <h2 class="section-title">Ready to Optimize Your UX Flow?</h2>
@@ -217,12 +198,11 @@
     </div>
   </section>
 
-
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <p class="footer-text">© <span id="year"></span> User Clues. All rights reserved.</p>
-      <ul class="nav-links">
+      <p class="footer-text">© <span id="year"></span> User Clues. All rights reserved.</p>
+      <ul class="footer-links">
         <li><a href="#pain">Challenges</a></li>
         <li><a href="#solution">Solution</a></li>
         <li><a href="#features">Features</a></li>
@@ -230,5 +210,4 @@
     </div>
   </footer>
 </body>
-
 </html>

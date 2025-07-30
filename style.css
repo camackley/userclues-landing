@@ -1,28 +1,26 @@
 /*
-  Global Stylesheet for the User Clues landing page.  This file defines the
-  colour palette, typography, responsive layout and component styling.  The
-  design is inspired by modern SaaS landing pages and optimised for high
-  conversion.  Colours are defined using CSS variables for easy maintenance.
+  Global Stylesheet for the User Clues landing page. 
+  Includes fixes for navbar in mobile view.
 */
 
 :root {
   /* Brand colours */
-  --surface-color: #0F172A;       /* primary background: deep navy */
-  --surface-color-2: #1B2B4B;     /* secondary background: slightly lighter navy */
-  --text-primary: #FFFFFF;        /* pure white for high contrast */
-  --text-secondary: #E8EDF7;      /* soft white for secondary text */
-  --primary: #2D4F8C;             /* steel blue for primary actions */
-  --accent: #6C4BC9;              /* purple accent for AI highlights */
-  --interactive: #3BAFDA;         /* cyan for hover states and links */
-  --success: #2E8B57;             /* green for success messages */
-  --warning: #E1B12C;             /* yellow for warnings */
-  --error: #D64550;               /* red for errors */
-  --radius: 0.75rem;              /* default border radius */
+  --surface-color: #0F172A;
+  --surface-color-2: #1B2B4B;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E8EDF7;
+  --primary: #2D4F8C;
+  --accent: #6C4BC9;
+  --interactive: #3BAFDA;
+  --success: #2E8B57;
+  --warning: #E1B12C;
+  --error: #D64550;
+  --radius: 0.75rem;
   --header-font: 'Manrope', sans-serif;
   --body-font: 'Inter', sans-serif;
 }
 
-/* Reset some basic elements */
+/* Reset basic elements */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -84,6 +82,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 .nav-links li a {
   color: var(--text-secondary);
@@ -104,6 +103,7 @@ a {
 .nav-links .btn-primary.nav-cta:hover {
   background: var(--primary);
 }
+
 /* Hamburger Menu */
 .nav-toggle {
   display: none;
@@ -121,6 +121,8 @@ a {
   border-radius: 2px;
   transition: background 0.3s;
 }
+
+/* Mobile Navbar Fixes */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -132,17 +134,21 @@ a {
     top: 100%;
     background: var(--surface-color-2);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* FIX: Centramos los enlaces */
     padding: 1rem 1.5rem;
     gap: 1rem;
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
   }
   .nav-toggle:checked + .hamburger + .nav-links {
     max-height: 320px;
+    opacity: 1;
+    background: var(--surface-color); /* FIX: Fondo sólido al abrir */
   }
-  .nav-links li a, .nav-links .btn-primary.nav-cta {
+  .nav-links li a,
+  .nav-links .btn-primary.nav-cta {
     width: 100%;
   }
 }
@@ -150,7 +156,7 @@ a {
 /* Hero Section */
 .hero {
   position: relative;
-  padding-top: 8.5rem; /* account for the fixed nav */
+  padding-top: 8.5rem;
   padding-bottom: 6rem;
   text-align: center;
   overflow: hidden;
@@ -179,7 +185,7 @@ a {
   padding: 1rem;
 }
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -236,7 +242,6 @@ a {
 /* Section Generic Styles */
 .section {
   padding: 4rem 1.5rem;
-  /* Ensure anchored section headings aren't hidden behind the fixed navbar */
   scroll-margin-top: 6rem;
 }
 .section-inner {

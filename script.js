@@ -6,7 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.querySelector('.navbar');
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero-title');
 
   window.addEventListener('scroll', () => {
     const heroBottom = hero.offsetHeight;
